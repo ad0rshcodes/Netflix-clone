@@ -11,7 +11,7 @@ function App() {
       <Banner />
       <Row isLargeRow title="Trending now" fetchUrl={requests.fetchTrending} />
       <Row title="Top Rated" fetchUrl={requests.fetchTrending} />
-      <Row title="fdsfdsvies" fetchUrl={requests.fetchActionMovies} />
+      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
       <Row title="Comdy Movies" fetchUrl={requests.fetchComedyMovies} />
       <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
       <Row title="BRomance Movies" fetchUrl={requests.fetchRomanceMovies} />

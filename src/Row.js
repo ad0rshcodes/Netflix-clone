@@ -38,15 +38,15 @@ function Row({ title, fetchUrl, isLargeRow }) {
   return (
     <div className="row">
       <h2>{title}</h2>
-      <ScrollContainer className="row__posters">
+      <ScrollContainer className="row__posters" >
         {movies.map((movie) => (
-          <img
+          <img 
             onClick={() =>
               movieClicked(movie.name || movie.title || movie.orginal_name)
             }
             key={movie.id}
             className={`row__poster ${ isLargeRow && "row__posterLarge" }`} //use && if theres no else or : otherwise use ?
-            // src={`${ base_url }${ isLargeRow ? movie.poster_path : movie.backdrop_path}`}
+            src={`${ base_url }${ isLargeRow ? movie.poster_path : movie.backdrop_path}`}
             alt={movie.name || movie.title || movie.orginal_name}
           />
         ))}
