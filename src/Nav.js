@@ -16,11 +16,11 @@ function Nav() {
       <div className="nav__contents">
         <img
           className="nav__logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg"
+          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" 
         />
         <img
           className="nav__avatar"
-          // src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png"
+           src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png"
           alt="Avatar Here"
         />
       </div>
