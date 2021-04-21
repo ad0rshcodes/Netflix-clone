@@ -18,6 +18,11 @@ function Banner() {
     fetchMovie();
   }, []);
   console.log(movie);
+    const [webkit, setWebkit] = useState(false);
+
+    const descWebkitHandler = () => {
+    setWebkit(!webkit)
+    }
   return (
     <header
       className="banner"
@@ -34,9 +39,10 @@ function Banner() {
         </h1>
         <div className="banner__buttons">
           <button className="banner__button">Play</button>
-          <button className="banner__button">More Info</button>
+          
+          <button className="banner__button" onClick={descWebkitHandler}>More Info</button>
         </div>
-        <p className="banner__description">{movie?.overview}</p>
+        <p className={`banner__description ${webkit && 'webkit_disable'}`}>{movie?.overview}</p>
       </div>
       <div className="banner--fadeBottom" />
     </header>
