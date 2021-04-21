@@ -30,7 +30,7 @@
 .banner__button:hover{
   color: #000;
   background-color: #e6e6e6;
-  /* transition: all .2s; */
+  transition: all .2s;
 }
 
 .banner__description {
@@ -46,6 +46,11 @@
   font-size:12px;
   margin-top: 20px;
 }
+
+.webkit_disable{
+  -webkit-line-clamp: unset !important;
+  }
+  
 
 .banner--fadeBottom{
   height:7.4rem;
