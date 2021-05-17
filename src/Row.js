@@ -4,10 +4,10 @@ import "./Row.css";
 import ScrollContainer from "react-indiana-drag-scroll";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
-import History from "./History";
+// import {History} from "./History";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
-function Row({ title, fetchUrl, isLargeRow }) {
+function Row({ title, fetchUrl, isLargeRow, History, setHistory}) {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
   useEffect(() => {
@@ -26,8 +26,10 @@ function Row({ title, fetchUrl, isLargeRow }) {
   };
   const movieClicked = (moviename) => {
     console.log(moviename);
-    History.push(moviename);
-    console.log(History);
+    History.push(moviename)
+    setHistory(History)
+    console.log(History)
+    // console.log(History);
     if (trailerUrl !== "") setTrailerUrl("");
     else {
       movieTrailer(moviename)
