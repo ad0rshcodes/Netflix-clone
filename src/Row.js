@@ -26,7 +26,7 @@ function Row({ title, fetchUrl, isLargeRow, History, setHistory}) {
   };
   const movieClicked = (moviename) => {
     console.log(moviename);
-    History.push(moviename)
+    History = History.concat([moviename])
     setHistory(History)
     console.log(History)
     // console.log(History);
