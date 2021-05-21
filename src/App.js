@@ -18,7 +18,8 @@ function App() {
       <Row History={History} setHistory={setHistory} title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
       <Row History={History} setHistory={setHistory} title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
       <Row History={History} setHistory={setHistory} title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
-      <Past History={History} title="History"/>
+      <Past History={History} title="History" fetchUrl={requests.fetchGeneral} />
+      <Row History={History} setHistory={setHistory} title="Top Rated" fetchUrl={requests.fetchGeneral}/>
     </div>
   );
 }
