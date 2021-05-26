@@ -7,6 +7,12 @@ import Nav from "./Nav";
 import {Past} from "./History"
 function App() {
   const [History, setHistory] = useState([]);
+  // function movie_id({ History }) {
+  //   History.map((movie) => {console.log(movie); return({movie})})
+  // }
+  // const API_KEY = "04ae7689fc21853d7db93ebc5e887fa0";
+  // const fetchGeneral = `/search/movie?api_key=${API_KEY}&query=${movie_id()}`
+
   return (
     <div className="app">
       <Nav />
@@ -18,8 +24,7 @@ function App() {
       <Row History={History} setHistory={setHistory} title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
       <Row History={History} setHistory={setHistory} title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
       <Row History={History} setHistory={setHistory} title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
-      <Past History={History} title="History" fetchUrl={requests.fetchGeneral} />
-      <Row History={History} setHistory={setHistory} title="Top Rated" fetchUrl={requests.fetchGeneral}/>
+      <Past History={History} title="History" />
     </div>
   );
 }

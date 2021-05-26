@@ -3,9 +3,7 @@ import axios from "./axios";
 const API_KEY = "04ae7689fc21853d7db93ebc5e887fa0";
 const external_id = [];
 
-function movie_id({ History }) {
-  History.map((movie) => {console.log(movie); return({movie})})
-}
+
 
 
 const requests = {
@@ -17,7 +15,6 @@ const requests = {
   fetchHorrorMovies: `/discover/movie?api_key=${API_KEY}&with_genres=27`,
   fetchRomanceMovies: `/discover/movie?api_key=${API_KEY}&with_genres=10749`,
   fetchDocumentaries: `/discover/movie?api_key=${API_KEY}&with_genres=99`,
-  fetchGeneral: `/search/movie?api_key=${API_KEY}&query=${movie_id}`
 };
 
 export default requests;

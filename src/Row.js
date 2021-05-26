@@ -24,9 +24,9 @@ function Row({ title, fetchUrl, isLargeRow, History, setHistory}) {
       autoplay: 1,
     },
   };
-  const movieClicked = (moviename) => {
+  const movieClicked = (moviename, poster) => {
     console.log(moviename);
-    History = History.concat([moviename])
+    History = History.concat([{name: moviename, poster_path: poster}])
     setHistory(History)
     console.log(History)
     // console.log(History);
@@ -47,7 +47,7 @@ function Row({ title, fetchUrl, isLargeRow, History, setHistory}) {
         {movies.map((movie) => (
           <img
             onClick={() => {
-              movieClicked(movie.name || movie.title || movie.orginal_name);
+              movieClicked(movie.name || movie.title || movie.orginal_name, movie.backdrop_path);
             }}
             key={movie.id}
             className={`row__poster ${isLargeRow && "row__posterLarge"}`} //use && if theres no else or : otherwise use ?
