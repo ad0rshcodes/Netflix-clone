@@ -12,4 +12,3 @@ const requests = {
 };
 
 export default requests;
-// https://api.themoviedb.org/3/movie/550?api_key=04ae7689fc21853d7db93ebc5e887fa0

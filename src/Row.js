@@ -4,9 +4,10 @@ import "./Row.css";
 import ScrollContainer from "react-indiana-drag-scroll";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
+// import {History} from "./History";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
-function Row({ title, fetchUrl, isLargeRow }) {
+function Row({ title, fetchUrl, isLargeRow, History, setHistory}) {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
   useEffect(() => {
@@ -23,8 +24,12 @@ function Row({ title, fetchUrl, isLargeRow }) {
       autoplay: 1,
     },
   };
-  const movieClicked = (moviename) => {
+  const movieClicked = (moviename, poster) => {
     console.log(moviename);
+    History = History.concat([{name: moviename, poster_path: poster}])
+    setHistory(History)
+    console.log(History)
+    // console.log(History);
     if (trailerUrl !== "") setTrailerUrl("");
     else {
       movieTrailer(moviename)
@@ -38,15 +43,17 @@ function Row({ title, fetchUrl, isLargeRow }) {
   return (
     <div className="row">
       <h2>{title}</h2>
-      <ScrollContainer className="row__posters" >
+      <ScrollContainer className="row__posters">
         {movies.map((movie) => (
-          <img 
-            onClick={() =>
-              movieClicked(movie.name || movie.title || movie.orginal_name)
-            }
+          <img
+            onClick={() => {
+              movieClicked(movie.name || movie.title || movie.orginal_name, movie.backdrop_path);
+            }}
             key={movie.id}
-            className={`row__poster ${ isLargeRow && "row__posterLarge" }`} //use && if theres no else or : otherwise use ?
-            src={`${ base_url }${ isLargeRow ? movie.poster_path : movie.backdrop_path}`}
+            className={`row__poster ${isLargeRow && "row__posterLarge"}`} //use && if theres no else or : otherwise use ?
+            src={`${base_url}${
+              isLargeRow ? movie.poster_path : movie.backdrop_path
+            }`}
             alt={movie.name || movie.title || movie.orginal_name}
           />
         ))}
