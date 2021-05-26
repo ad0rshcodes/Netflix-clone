@@ -7,11 +7,6 @@ import Nav from "./Nav";
 import {Past} from "./History"
 function App() {
   const [History, setHistory] = useState([]);
-  // function movie_id({ History }) {
-  //   History.map((movie) => {console.log(movie); return({movie})})
-  // }
-  // const API_KEY = "04ae7689fc21853d7db93ebc5e887fa0";
-  // const fetchGeneral = `/search/movie?api_key=${API_KEY}&query=${movie_id()}`
 
   return (
     <div className="app">
