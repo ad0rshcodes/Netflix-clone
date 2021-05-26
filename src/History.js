@@ -8,14 +8,14 @@ export function Past({title, History}) {
 
     
     return (
+      //Displaying the thumbnails for movies in History
         <div className="row">
           <h2>{title}</h2>
           <ScrollContainer className="row__posters">
             {History.map((movie) => (
               <img
-                
-                className={`row__poster`} //use && if theres no else or : otherwise use ?
-                src={`${base_url}${
+                className={`row__poster`} 
+                src={`${base_url}${ 
                   movie.poster_path
                 }`}
                 alt={movie.name}
